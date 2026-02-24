@@ -73,16 +73,6 @@
       margin: 0;
     }
 
-    .intro {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin: var(--space) 0 calc(var(--space) * 2);
-      padding: var(--space);
-      background: var(--surface);
-      border-radius: var(--radius);
-      border-left: 3px solid var(--accent);
-    }
-
     h2 {
       font-size: 1.25rem;
       font-weight: 600;
@@ -188,15 +178,6 @@
       font-size: 0.85em;
     }
 
-    .part-label {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
-    }
-
     .what-working-on {
       background: linear-gradient(135deg, rgba(201, 162, 39, 0.08) 0%, rgba(201, 162, 39, 0.02) 100%);
       border: 1px solid rgba(201, 162, 39, 0.2);
@@ -223,20 +204,12 @@
   <div class="wrap">
     <header>
       <h1>Alex(andra) Veremeychik</h1>
-      <p class="subtitle">Portfolio — Startup Shell</p>
+      <p class="subtitle">Portfolio</p>
     </header>
 
-    <p class="intro">
-      This portfolio is structured so reviewers can skim it in about 10 minutes. Each section includes brief context for people who may not be experts in the topics.
-    </p>
-
-    <!-- Part 1: Past projects -->
-    <section aria-labelledby="part1">
-      <p class="part-label" id="part1">Part 1 — Past projects</p>
-      <h2>Past projects &amp; work</h2>
-
+    <section>
+      <h2>Math Art Play</h2>
       <div class="card">
-        <h3>Math Art Play</h3>
         <p>
           <a href="https://mathartplay.org" target="_blank" rel="noopener noreferrer">MathArtPlay</a> creates hands-on activities that explore the intersection of mathematics and visual design. Through interactive tools, puzzles, and pattern-making exercises, users can experiment with geometry, symmetry, and tessellations, making abstract math concepts tangible and engaging.
         </p>
@@ -253,7 +226,10 @@
           <a class="open-link" href="https://igpstamp.com/" target="_blank" rel="noopener noreferrer">Open IGP Stamp Studio in new tab</a>
         </div>
       </div>
+    </section>
 
+    <section>
+      <h2>Research</h2>
       <div class="card">
         <h3>Trespass Towing in Montgomery County</h3>
         <p>
@@ -299,10 +275,8 @@
       </div>
     </section>
 
-    <!-- Part 2: What are you working on? -->
-    <section aria-labelledby="part2">
-      <p class="part-label" id="part2">Part 2 — What are you working on?</p>
-      <h2>What are you working on?</h2>
+    <section>
+      <h2>Currently Working On</h2>
       <div class="card what-working-on">
         <p class="placeholder">
           [Add a short description of an idea you have or something you’re currently building. Keep it scannable so reviewers can get the gist in a few minutes. You can add links below if relevant.]
@@ -314,7 +288,7 @@
     </section>
 
     <footer>
-      Portfolio for Startup Shell. Links open in a new tab.
+      Contact me
     </footer>
   </div>
 </body>
