@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex(andra) Veremeychik — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --text: #e8e6e3;
+      --muted: #8b8685;
+      --accent: #c9a227;
+      --accent-dim: #9a7b1a;
+      --link: #7eb8da;
+      --link-hover: #a8d4f0;
+      --radius: 8px;
+      --space: 1.5rem;
+      --max-width: 720px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: calc(var(--space) * 2) var(--space);
+    }
+
+    .card a:not(.open-link) {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    .card a:not(.open-link):hover {
+      color: var(--link-hover);
+    }
+
+    header {
+      padding: calc(var(--space) * 2) 0 calc(var(--space) * 1.5);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.25em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: var(--space) 0 calc(var(--space) * 2);
+      padding: var(--space);
+      background: var(--surface);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--accent);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: calc(var(--space) * 2) 0 var(--space);
+      color: var(--accent);
+    }
+
+    h2:first-of-type {
+      margin-top: calc(var(--space) * 1.5);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: var(--space) 0 0.5em;
+      color: var(--text);
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: var(--space) 0 0.35em;
+      color: var(--text);
+    }
+
+    p {
+      margin: 0 0 0.75em;
+    }
+
+    section {
+      margin-bottom: calc(var(--space) * 1.5);
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: var(--space);
+      margin-bottom: var(--space);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .iframe-wrap {
+      margin-top: 0.75rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #000;
+    }
+
+    .iframe-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 420px;
+      border: 0;
+    }
+
+    .iframe-wrap .open-link {
+      display: block;
+      padding: 0.4rem 0.75rem;
+      background: var(--surface);
+      color: var(--accent);
+      font-size: 0.85rem;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .iframe-wrap .open-link:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.75rem;
+      background: rgba(201, 162, 39, 0.15);
+      color: var(--accent);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .links a:hover {
+      background: rgba(201, 162, 39, 0.25);
+      color: #e5c84a;
+    }
+
+    .links a::after {
+      content: "→";
+      font-size: 0.85em;
+    }
+
+    .part-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .what-working-on {
+      background: linear-gradient(135deg, rgba(201, 162, 39, 0.08) 0%, rgba(201, 162, 39, 0.02) 100%);
+      border: 1px solid rgba(201, 162, 39, 0.2);
+      border-radius: var(--radius);
+      padding: var(--space);
+      margin-top: var(--space);
+    }
+
+    .what-working-on .placeholder {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    footer {
+      margin-top: calc(var(--space) * 3);
+      padding-top: var(--space);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Alex(andra) Veremeychik</h1>
+      <p class="subtitle">Portfolio — Startup Shell</p>
+    </header>
+
+    <p class="intro">
+      This portfolio is structured so reviewers can skim it in about 10 minutes. Each section includes brief context for people who may not be experts in the topics.
+    </p>
+
+    <!-- Part 1: Past projects -->
+    <section aria-labelledby="part1">
+      <p class="part-label" id="part1">Part 1 — Past projects</p>
+      <h2>Past projects &amp; work</h2>
+
+      <div class="card">
+        <h3>Math Art Play</h3>
+        <p>
+          <a href="https://mathartplay.org" target="_blank" rel="noopener noreferrer">MathArtPlay</a> creates hands-on activities that explore the intersection of mathematics and visual design. Through interactive tools, puzzles, and pattern-making exercises, users can experiment with geometry, symmetry, and tessellations, making abstract math concepts tangible and engaging.
+        </p>
+
+        <h4>Graph Colorama</h4>
+        <div class="iframe-wrap">
+          <iframe src="https://a1-3x.github.io/graphcolorama/" title="Graph Colorama"></iframe>
+          <a class="open-link" href="https://a1-3x.github.io/graphcolorama/" target="_blank" rel="noopener noreferrer">Open Graph Colorama in new tab</a>
+        </div>
+
+        <h4>IGP Stamp Studio</h4>
+        <div class="iframe-wrap">
+          <iframe src="https://igpstamp.com/" title="IGP Stamp Studio"></iframe>
+          <a class="open-link" href="https://igpstamp.com/" target="_blank" rel="noopener noreferrer">Open IGP Stamp Studio in new tab</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Trespass Towing in Montgomery County</h3>
+        <p>
+          In partnership with Montgomery County, research on trespass towing data led to four web apps that address common parking and towing challenges. The apps map tow hotspots, highlight companies with frequent violations, and simplify complaint reporting, translating detailed county data into practical, user-facing solutions.
+        </p>
+        <div class="iframe-wrap">
+          <iframe src="https://a1-3x.github.io/tow_analysis/" title="Tow analysis"></iframe>
+          <a class="open-link" href="https://a1-3x.github.io/tow_analysis/" target="_blank" rel="noopener noreferrer">Open tow analysis in new tab</a>
+        </div>
+
+        <h4>TowR</h4>
+        <p>
+          The Towr app is aimed at consumers. Its purpose is to prevent trespass tows from occuring by educating vehicle owners on where vehicles have been towed from in the past. Consumers looking to park their vehicle may look up an address, or share their location with the app, and will be met with a map indicating locations nearby that have seen trespass tows in the past 3 years.
+        </p>
+        <div class="iframe-wrap">
+          <iframe src="https://towr.netlify.app/" title="TowR"></iframe>
+          <a class="open-link" href="https://towr.netlify.app/" target="_blank" rel="noopener noreferrer">Open TowR in new tab</a>
+        </div>
+
+        <h4>Tow Ranker</h4>
+        <p>
+          The Tow Ranking web app demonstrates the capability of this or similar data to rank merchants on their level of deviation from the mean. Applications based on different measures can be developed as their importance is uncovered. More information and calculations can be found <a href="https://github.com/A1-3x/tow/blob/main/ranking-app.md" target="_blank" rel="noopener noreferrer">here</a>.
+        </p>
+        <div class="iframe-wrap">
+          <iframe src="https://towrank.netlify.app/" title="Tow Ranker"></iframe>
+          <a class="open-link" href="https://towrank.netlify.app/" target="_blank" rel="noopener noreferrer">Open Tow Ranker in new tab</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Migration Between the United States</h3>
+        <p>
+          An interactive dashboard was created to explore 20 years of U.S. census migration data. Users can analyze patterns of interstate migration, while an accompanying heatmap visualizes the probability of moving from one state to another, turning complex population data into clear, interactive insights.
+        </p>
+        <div class="iframe-wrap">
+          <iframe src="https://state-flow-explorer.lovable.app" title="State flow explorer"></iframe>
+          <a class="open-link" href="https://state-flow-explorer.lovable.app" target="_blank" rel="noopener noreferrer">Open state flow explorer in new tab</a>
+        </div>
+        <div class="iframe-wrap">
+          <iframe src="https://a1-3x.github.io/Markov-viz/" title="Markov viz"></iframe>
+          <a class="open-link" href="https://a1-3x.github.io/Markov-viz/" target="_blank" rel="noopener noreferrer">Open Markov viz in new tab</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 2: What are you working on? -->
+    <section aria-labelledby="part2">
+      <p class="part-label" id="part2">Part 2 — What are you working on?</p>
+      <h2>What are you working on?</h2>
+      <div class="card what-working-on">
+        <p class="placeholder">
+          [Add a short description of an idea you have or something you’re currently building. Keep it scannable so reviewers can get the gist in a few minutes. You can add links below if relevant.]
+        </p>
+        <div class="links">
+          <!-- Add your project links here when ready -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Portfolio for Startup Shell. Links open in a new tab.
+    </footer>
+  </div>
+</body>
+</html>
