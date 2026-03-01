@@ -186,6 +186,19 @@
       margin-top: var(--space);
     }
 
+    .currently-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space);
+      margin-top: var(--space);
+    }
+
+    @media (max-width: 700px) {
+      .currently-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .what-working-on .placeholder {
       color: var(--muted);
       font-style: italic;
@@ -277,18 +290,30 @@
 
     <section>
       <h2>Currently Working On</h2>
-      <div class="card what-working-on">
-        <p class="placeholder">
-          [Add a short description of an idea you have or something you’re currently building. Keep it scannable so reviewers can get the gist in a few minutes. You can add links below if relevant.]
-        </p>
-        <div class="links">
-          <!-- Add your project links here when ready -->
+      <div class="currently-cards">
+        <div class="card what-working-on">
+          <h3>Los Angeles Stadium Voter Research</h3>
+          <p>
+            In collaboration with the UMD Center for Democracy, this research analyzes voter behavior and public opinion surrounding Los Angeles stadium proposals. The project explores patterns in civic participation to better understand how large-scale urban development initiatives shape democratic engagement.
+          </p>
+        </div>
+        <div class="card what-working-on">
+          <h3>BeHeard</h3>
+          <p>
+            BeHeard is a developing platform designed to amplify community voices through accessible data visualization and structured feedback tools. The goal is to make public input more visible, measurable, and actionable for decision-makers.
+          </p>
+        </div>
+        <div class="card what-working-on">
+          <h3>MathArtPlay (Ongoing Development)</h3>
+          <p>
+            New MathArtPlay activities continue to expand hands-on explorations of geometry, symmetry, and mathematical creativity. Each activity blends visual design with mathematical structure to make abstract concepts interactive and engaging.
+          </p>
         </div>
       </div>
     </section>
 
     <footer>
-      Contact me
+      Send it <a href="mailto:averemey@terpmail.umd.edu">here</a>.
     </footer>
   </div>
 </body>
