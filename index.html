@@ -185,6 +185,115 @@
       }
     }
 
+    /* Phone-first: larger scatter, better top, bigger type */
+    @media (max-width: 600px) {
+      body {
+        font-size: 1.125rem;
+        line-height: 1.7;
+      }
+
+      .wrap {
+        padding: 1.25rem 1rem;
+      }
+
+      header {
+        padding: 1.5rem 0 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        margin: 1.5rem 0 0.75rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin: 1.25rem 0 0.5em;
+      }
+
+      h4 {
+        font-size: 1.1rem;
+        margin: 1rem 0 0.4em;
+      }
+
+      p {
+        margin-bottom: 0.85em;
+      }
+
+      .scatter-index {
+        padding: 1.5rem 0;
+      }
+
+      .scatter-inner {
+        padding: 0 0.75rem;
+      }
+
+      .scatter-plot-wrap {
+        min-height: 420px;
+        padding: 0.5rem;
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .scatter-plot-wrap svg.scatter-plot {
+        flex: 1 1 auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .scatter-legend-wrap {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        gap: 1.25rem;
+      }
+
+      .scatter-legend-wrap .legend-item {
+        font-size: 0.95rem;
+      }
+
+      .card {
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .iframe-wrap {
+        margin-top: 0.75rem;
+      }
+
+      .iframe-wrap iframe {
+        height: 320px;
+      }
+
+      .iframe-wrap .open-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      .links a {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.95rem;
+      }
+
+      section {
+        margin-bottom: 1.5rem;
+      }
+
+      footer {
+        font-size: 0.9rem;
+        margin-top: 2.5rem;
+        padding-top: 1rem;
+      }
+    }
+
     .scatter-grid line {
       stroke: var(--plot-grid);
       stroke-width: 0.5;
